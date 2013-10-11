@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/com/outbottle/genericdao/model/dao/TestDao.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>12</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/com/outbottle/genericdao/model/dao/Dao.java</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/com/outbottle/genericdao/model/dao/TestDao.java</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/com/outbottle/genericdao/model/entities/Test.java</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/com/outbottle/genericdao/model/services/TestService.java</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/com/outbottle/genericdao/controllers/DefaultController.java</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/web/WEB-INF/sql.sql</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/src/java/jdbc.properties</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/web/WEB-INF/jsp/index.jsp</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/web/WEB-INF/dispatcher-servlet.xml</file>
+        <file>file:/C:/Users/pc/Documents/NetBeansProjects/GenericDAOTest/web/WEB-INF/web.xml</file>
+    </open-files>
+</project-private>
