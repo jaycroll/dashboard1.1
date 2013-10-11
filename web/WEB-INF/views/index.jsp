@@ -31,7 +31,7 @@
             <c:forEach items="${list}" var="obj">
                 <tr>
                     <td>${obj.username}</td>
-                    
+                    <td>${obj.password}</td>
                 </tr>
             </c:forEach>
             </table>
