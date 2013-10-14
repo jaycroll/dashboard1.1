@@ -9,12 +9,14 @@ import java.beans.PropertyDescriptor;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,20 +27,25 @@ public class DefaultController {
     @Autowired 
     private UserService userService;
     
-    @RequestMapping("/")
-    public String index(ModelMap map) {
-        return "index";
-    }
     
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView student() {
-      return new ModelAndView("user", "command", new User());
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView user() {
+      return new ModelAndView("index", "command", new User());
    }
-    @RequestMapping(value="/loginform",method = RequestMethod.POST)
-    public String login(@ModelAttribute("user") User user,BindingResult bindingResult, HttpServletRequest request,ModelMap map){
-        
-        return "index";
-    }
+    @RequestMapping(value="loginform",method = RequestMethod.POST)
+    public ModelAndView login(@ModelAttribute("user") User user,BindingResult bindingResult,ModelMap map,HttpSession session){
+        String username = user.getUsername();
+        String password = user.getPassword();
+        List selectedUser = userService.checkifExists(username, password);
+       if(selectedUser.isEmpty()){
+           map.addAttribute("error","nothing found");
+       }
+       else{
+           map.put("list",userService.checkifExists(username, password));
+           session.setAttribute("user", selectedUser);
+       }
+        return new ModelAndView("index", "command", new User());
+        }
 
     /*
      * Determine the primary key name or the

@@ -1,9 +1,9 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -63,13 +63,33 @@ $(document).ready(function() {
     <img src="<c:url value='/resources/images/access.png' />" width="90" height="110" border="0"  style="float:left; margin:0 10px;" /></div>
 <div id="title"><a href="#login-box" class="login-window" style="color:#62bbf5; font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none;">Login</a></div>
 
+<c:if test="${empty list}">
+            <p>No Letters!</p>
+        </c:if>
+        <c:if test="${!empty list}">
+            <table>
+                <tr>
+                    <th>ID</th><th>Name</th>
+                </tr>
+            <c:forEach items="${list}" var="obj">
+                <tr>
+                    <td>${obj.username}</td>
+                    <td>${obj.password}</td>
+                    <td>${obj.roleid}</td>
+                </tr>
+            </c:forEach>
+            </table>
+        </c:if>
+${roleid}
 <div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="<c:url value='/resources/images/close_pop.png' />" class="btn_close" title="Close Window" alt="Close" /></a>
-        <form:form modelAttribute="user" method="post" class="signin" action="loginform">
-            <form:label path="firstname">First Name</form:label>
-            <form:input path="firstname" />
+        <form:form method="POST" action="loginform">
+            <form:label path="username">Name</form:label>
+            <form:input path="username" />
+            <form:label path="password">Password</form:label>
+            <form:input path="password" />
+            <input type="submit" value="Login"/>
         </form:form>
-
 </div>
 
 
