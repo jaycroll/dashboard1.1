@@ -76,6 +76,10 @@ public abstract class Dao<T> {
         return criteria.list();
     }
     
+    
+    public List<T> getPrivlege(Criteria criteria){
+        return criteria.list();
+    }
     /*
      * Return all of type 'T' (as determined by the generic member variable type 'entityClass')
      */

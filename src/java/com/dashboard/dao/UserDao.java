@@ -6,7 +6,10 @@ package com.dashboard.dao;
 
 import com.dashboard.model.User;
 import java.util.List;
+import javax.persistence.Query;
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -24,10 +27,9 @@ public class UserDao extends Dao<User>{
     public List<User> checkForUser(String username,String password){
         Criteria user = getCurrentSession().createCriteria(User.class);
         user.add(Restrictions.eq("username",username));
-        user.add(Restrictions.eq("password",password));
+        user.add(Restrictions.eq("password",password));     
         return checkEntry(user);
-        
     }
-    
+  
     
 }

@@ -1,7 +1,8 @@
 
 package com.dashboard.controller;
 
-import com.dashboard.service.TestService;
+
+import com.dashboard.model.User;
 import com.dashboard.service.UserService;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -12,36 +13,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DefaultController {
     
-    @Autowired
-    private TestService testService;
     @Autowired 
     private UserService userService;
     
     @RequestMapping("/")
-    public String test(ModelMap map) {
-        /*
-         * A few tests
-         * Try each of these in turn
-         */
-        //map.put("list", testService.list());
-        //map.put("list", testService.range(0, 3));
-        //map.put("list", testService.rangeOrderFirstAsc(0, 3));
-        //map.put("list", testService.rangeOrderFirstDesc(0, 3));
-        //map.put("list", testService.rangeOrderFirstAscUnarchivedOnly(0, 3));
-        //map.put("list", testService.pageByPageSize(0, 1));
-        //map.put("list", testService.pageByPageSizeOrderAsc(0, 4));
-        //map.put("list", testService.pageByPageSizeOrderDesc(0, 4));
-        //map.put("list", testService.findPageArchivedOnlyOrderFirst(0,5));
-        //map.put("list",testService.findPageArchivedOnlyOrderFirst(0,1,"jaycroll"));
-        map.put("list",userService.checkifExists("admin", "abcd1234"));
+    public String index(ModelMap map) {
         return "index";
     }
     
-    
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView student() {
+      return new ModelAndView("user", "command", new User());
+   }
+    @RequestMapping(value="/loginform",method = RequestMethod.POST)
+    public String login(@ModelAttribute("user") User user,BindingResult bindingResult, HttpServletRequest request,ModelMap map){
+        
+        return "index";
+    }
+
     /*
      * Determine the primary key name or the
      * name of the property which has the @Id annotation (javax.persistence.Id)

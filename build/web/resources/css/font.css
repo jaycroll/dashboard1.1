@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+.lucida_12_lead_b{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#191919;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_steel_b{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#666666;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_tungsten_b{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_blue_b{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#62bbf5;
+	text-decoration:none;
+	
+}
+
+.lucida_12_red_b{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#e63739;
+	text-decoration:none;
+	
+}
+
+
+
+
+
+.lucida_12_lead{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#191919;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_steel{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#666666;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_tungsten{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#333333;
+	text-decoration:none;
+	
+}
+
+
+.lucida_12_blue{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#62bbf5;
+	text-decoration:none;
+	
+}
+
+.lucida_12_red{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:12px;
+	color:#e63739;
+	text-decoration:none;
+	
+}
+
+
+
+.lucida_10_lead{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#191919;
+	text-decoration:none;
+	
+}
+
+
+.lucida_10_steel{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#666666;
+	text-decoration:none;
+	
+}
+
+
+.lucida_10_tungsten{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#333333;
+	text-decoration:none;
+	
+}
+
+
+.lucida_10_blue{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#62bbf5;
+	text-decoration:none;
+	
+}
+
+.lucida_10_red{
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+	font-size:10px;
+	color:#e63739;
+	text-decoration:none;
+	
+}
+
+a:link    {color:#999; text-decoration:none;}
+a:visited {color:#999; text-decoration:none;}
+a:hover   {color:#999; text-decoration:none;}
+a:active  {color:#999; text-decoration:none;}
+
+
+
