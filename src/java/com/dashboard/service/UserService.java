@@ -25,4 +25,8 @@ public class UserService {
      public List<User> checkifExists(String username, String password){
         return userDao.checkForUser(username, password);
     }
+     //public List<User> getRoleId(List<User> userData){
+     //    return userDao.checkForRoleId(userData);
+     //}
+
 }

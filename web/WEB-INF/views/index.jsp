@@ -50,7 +50,15 @@ $(document).ready(function() {
 </head>
 
 <body>   
+<c:if test="${!empty list}">
 
+            <c:forEach items="${list}" var="obj">
+                <c:set var="sess_uname" value="${obj.username}" scope="session"/>
+                <c:set var="sess_roleid" value="${obj.roleid}" scope="session"/>
+            </c:forEach>
+
+        </c:if>   
+    <c:out value="${sessionScope.sess_uname}"/>
 <div id="page">
 <div id="wrapper">
 <div id="header"><img src="<c:url value='/resources/images/ppe-blk.png' />" width="400" height="42" /></div>
@@ -63,24 +71,6 @@ $(document).ready(function() {
     <img src="<c:url value='/resources/images/access.png' />" width="90" height="110" border="0"  style="float:left; margin:0 10px;" /></div>
 <div id="title"><a href="#login-box" class="login-window" style="color:#62bbf5; font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none;">Login</a></div>
 
-<c:if test="${empty list}">
-            <p>No Letters!</p>
-        </c:if>
-        <c:if test="${!empty list}">
-            <table>
-                <tr>
-                    <th>ID</th><th>Name</th>
-                </tr>
-            <c:forEach items="${list}" var="obj">
-                <tr>
-                    <td>${obj.username}</td>
-                    <td>${obj.password}</td>
-                    <td>${obj.roleid}</td>
-                </tr>
-            </c:forEach>
-            </table>
-        </c:if>
-${roleid}
 <div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="<c:url value='/resources/images/close_pop.png' />" class="btn_close" title="Close Window" alt="Close" /></a>
         <form:form method="POST" action="loginform">

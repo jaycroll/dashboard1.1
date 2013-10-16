@@ -21,6 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.TransientObjectException;
@@ -185,6 +186,31 @@ public abstract class Dao<T> {
     @SuppressWarnings("unchecked")
     public T get(Class c, Serializable id) {
         return (T)sessionFactory.getCurrentSession().get(c, id);
+    }
+    @SuppressWarnings("unchecked")
+    public String selectSingle(String table,String column,String[] condition){
+        Session session = sessionFactory.getCurrentSession();
+        String squery = "SELECT "+column+" FROM "+table+"";
+        
+        if (condition.length>0 && condition.length<2) {
+            squery += " WHERE "+condition;
+        }
+        else{
+            squery += " WHERE ";
+            for(int i=0;i<condition.length;i++){
+                int length1 = condition.length-1;
+                if(i == length1){
+                    squery+=condition[i]; 
+                }
+                else{
+                    squery +=condition[i]+" AND ";
+                }
+            }
+        }
+
+        Query query = session.createQuery(squery);
+        String result = (String)query.uniqueResult();
+        return result;
     }
 
     /*

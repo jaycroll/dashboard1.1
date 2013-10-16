@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -19,17 +20,26 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("userDao")
 public class UserDao extends Dao<User>{
-        
+    
+    private SessionFactory userSession;
+    
     public UserDao(){
         super(User.class);
     }
     
     public List<User> checkForUser(String username,String password){
         Criteria user = getCurrentSession().createCriteria(User.class);
-        user.add(Restrictions.eq("username",username));
+        user.add(Restrictions.disjunction()
+                .add(Restrictions.eq("username", username))
+                .add(Restrictions.eq("email",username)));
         user.add(Restrictions.eq("password",password));     
         return checkEntry(user);
     }
+    
+   
+    
+    
+
   
     
 }
