@@ -49,16 +49,7 @@ $(document).ready(function() {
 <title>Dashboard</title>
 </head>
 
-<body>   
-<c:if test="${!empty list}">
-
-            <c:forEach items="${list}" var="obj">
-                <c:set var="sess_uname" value="${obj.username}" scope="session"/>
-                <c:set var="sess_roleid" value="${obj.roleid}" scope="session"/>
-            </c:forEach>
-
-        </c:if>   
-    <c:out value="${sessionScope.sess_uname}"/>
+<body>       
 <div id="page">
 <div id="wrapper">
 <div id="header"><img src="<c:url value='/resources/images/ppe-blk.png' />" width="400" height="42" /></div>

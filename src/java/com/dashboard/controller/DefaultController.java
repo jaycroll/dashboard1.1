@@ -49,8 +49,6 @@ public class DefaultController {
            session.setAttribute("user", selectedUser);
            //String thisUser = selectedUser.get(0).toString();
            //map.put("thisUser",thisUser);
-           session.setAttribute("test","testSessionData");
-           map.put("list",session.getAttribute("user"));
            //map.put("username",userService.returnUser(username));
            //map.put("roleid",userService.getRid(username, password));
            
