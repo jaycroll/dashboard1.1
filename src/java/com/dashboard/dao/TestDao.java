@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository; 
 
 @Repository("testDao")
-public class TestDao extends Dao<Test> {
+public class TestDao extends DashboardDao<Test> {
 
     public TestDao() {
         super(Test.class);

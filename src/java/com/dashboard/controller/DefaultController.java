@@ -54,7 +54,7 @@ public class DefaultController {
            
        }
         return new ModelAndView("index", "command", new User());
-        }
+     }
 
     /*
      * Determine the primary key name or the

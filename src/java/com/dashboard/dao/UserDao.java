@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author pc
  */
 @Repository("userDao")
-public class UserDao extends Dao<User>{
+public class UserDao extends DashboardDao<User>{
     
     private SessionFactory userSession;
     
