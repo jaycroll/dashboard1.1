@@ -31,12 +31,11 @@ $(document).ready(function() {
 		});
 		
 		// Add the mask to body
-		$('body').append('<div id="mask"></div>');
-		$('#mask').fadeIn(300);
+		
 		
 		return false;
 	});
-	
+        
 	// When clicking on the button close or the mask layer the popup closed
 	$('a.close, #mask').live('click', function() { 
 	  $('#mask , .login-popup').fadeOut(300 , function() {
@@ -64,15 +63,24 @@ $(document).ready(function() {
 
 <div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="<c:url value='/resources/images/close_pop.png' />" class="btn_close" title="Close Window" alt="Close" /></a>
-        <form:form method="POST" action="loginform">
-            <form:label path="username">Name</form:label>
-            <form:input path="username" />
-            <form:label path="password">Password</form:label>
-            <form:input path="password" />
-            <input type="submit" value="Login"/>
-        </form:form>
-</div>
+        <fieldset class="textbox">
+        <form:form method="POST" action="login" class="signin">
+            
+            <label class="username">
+                <form:label path="username" class="username">  <span>Username or email</span></form:label>
+                <form:input path="username" autocomplete="on" id="username"/>
+            </label>
 
+            <label class="password">
+                <form:label path="password"><span class="password">Password</span></form:label>
+                <form:input path="password"  id="password" type="password"/>
+            </label>
+            <input type="submit" value="Sign In"  class="submit button"/>
+        </form:form>
+        </fieldset>     
+
+</div>
+<span>${error}</span>
 
 </div><!---------wrapper------------->
 </div><!---------page------------->

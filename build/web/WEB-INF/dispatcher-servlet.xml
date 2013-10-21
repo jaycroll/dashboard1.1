@@ -76,7 +76,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <bean id="sessionFactory2"
               class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource2" ref="dataSource2" />
+        <property name="dataSource" ref="dataSource2" />
         <property name="annotatedClasses">
             <list>
                 <value>com.dashboard.model.Test</value>
@@ -97,7 +97,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     </bean>
 
     <bean id="hibernateTransactionManager2" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory2" ref="sessionFactory2" /> 
+        <property name="sessionFactory" ref="sessionFactory2" /> 
     </bean>
 
     

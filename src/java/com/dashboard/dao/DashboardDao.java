@@ -81,6 +81,7 @@ public abstract class DashboardDao<T> {
     public List<T> getPrivlege(Criteria criteria){
         return criteria.list();
     }
+   
     /*
      * Return all of type 'T' (as determined by the generic member variable type 'entityClass')
      */
